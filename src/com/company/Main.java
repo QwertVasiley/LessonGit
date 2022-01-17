@@ -14,11 +14,18 @@ public class Main {
         System.out.print("In third number: ");
         int third = scanner.nextInt();
 
-
-
-        System.out.println(first);
-        System.out.println(second);
-        System.out.println(third);
-
+        if (first > second && second > third)
+        {
+            System.out.println("Большее число : " +first);
+        }
+        if (first < second && second > third)
+        {
+            System.out.println("Большее число : " +second);
+        }
+        if (first < second && second < third)
+        {
+            System.out.println("Большее число : " +third);
+        }
+        else {}
     }
 }
