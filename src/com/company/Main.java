@@ -10,11 +10,11 @@ public class Main {
 // Способ 1
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("In first number: ");
+        System.out.print("Enter first number: ");
         int first = scanner.nextInt();
-        System.out.print("In second number: ");
+        System.out.print("Enter second number: ");
         int second = scanner.nextInt();
-        System.out.print("In third number: ");
+        System.out.print("Enter third number: ");
         int third = scanner.nextInt();
 
         if (first > second && second > third)
@@ -60,15 +60,14 @@ public class Main {
         else {}
     }
 }
-
         // Второй способ
 
 //        Scanner scanner = new Scanner(System.in);
-//        System.out.print("In first number: ");
+//        System.out.print("Enter first number: ");
 //        int first = scanner.nextInt();
-//        System.out.print("In second number: ");
+//        System.out.print("Enter second number: ");
 //        int second = scanner.nextInt();
-//        System.out.print("In third number: ");
+//        System.out.print("Enter third number: ");
 //        int third = scanner.nextInt();
 //
 //        if (first > second && second > third) System.out.println("Большее число : " +first);
