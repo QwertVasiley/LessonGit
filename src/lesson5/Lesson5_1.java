@@ -1,11 +1,19 @@
 package lesson5;
 
+import java.util.Scanner;
+
 public class Lesson5_1 {
     public static void main(String[] args) {
-        for (int a=1; a<=10 ; a++)
-            System.out.println(a);
+        // факториал числа i
+        int mult = 1;
+
+        for (int i=1; i<=5 ; i++) {
+            mult = mult * i;
+        }
+            System.out.println(mult);
 
 
-    }}
+    }
+}
 
 
