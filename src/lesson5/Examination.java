@@ -12,6 +12,7 @@ public class Examination {
         int noChet;
         int sumNoChet = 0;
         int number = scanner.nextInt();
+        //What did I say at the previous lesson? We could do it in 1 loop!
         while (chet<number) {
             chet=chet+2;
             sumChet = sumChet + chet;
