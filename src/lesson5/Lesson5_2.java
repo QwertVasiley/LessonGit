@@ -2,7 +2,8 @@ package lesson5;
 
 import java.util.Scanner;
 
-// цикл While
+    // цикл While
+
 public class Lesson5_2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

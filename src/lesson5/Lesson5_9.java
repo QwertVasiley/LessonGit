@@ -7,18 +7,20 @@ public class Lesson5_9 {
         //Посчитать сумму нечетных и вывести на экран
         //Найти общую сумму всех чисел
 
-//if you name your variables properly, you won't need comments!!!
+
         int c=0; //переменная четных чисел
         int sumChet = 0; //сумма сумм четных чисел
         int i=1; //переменная не четных чисел
         int sumNoChet = 1;
+
+        while (c<25){
 //you did a lot of operations. we could find odd and even number in 1 while loop using if-else and '%'
         while (c<100){
             c=c+2;
             sumChet = sumChet+c;
         }
 
-        while (i<99) {
+        while (i<24) {
             i=i+2;
             sumNoChet=sumNoChet+i;
         }
