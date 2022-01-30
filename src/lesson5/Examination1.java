@@ -27,6 +27,7 @@ public class Examination1 {
                     result = first * second;
                     break;
                 case '/':
+                    //division by 0
                     result = first / second;
                     break;
                 default:
@@ -38,6 +39,7 @@ public class Examination1 {
                 yesNo = true;
             if (prover.equals("no") )
                 yesNo = false;
+            //while (yesNo)
             }while (yesNo==true);
         }
     }
