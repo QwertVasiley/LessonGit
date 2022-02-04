@@ -1,9 +1,8 @@
 package lesson6;
 
-import java.util.Random;
 import java.util.Scanner;
 
-public class Lesson6_2 {
+public class Random {
 
          //RANDOME
 
@@ -11,7 +10,7 @@ public class Lesson6_2 {
             Scanner scanner = new Scanner(System.in);
             System.out.print("Введите число: ");
             int number = scanner.nextInt();
-            Random random = new Random();
+            java.util.Random random = new java.util.Random();
             int randomNumber = random.nextInt(-100000000, 100000000);
             String text = number < randomNumber ? "меньше" : number > randomNumber ? "больше" : "равно";
             System.out.println("Рандомное число: " + randomNumber);
