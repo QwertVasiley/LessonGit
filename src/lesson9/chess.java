@@ -1,5 +1,5 @@
 package lesson9;
-
+//+
 public class chess {
     public static void main(String[] args) {
         //нарисовать в консоли шахматную доску 8Х8
