@@ -1,5 +1,5 @@
 package lesson9;
-
+//+
 public class sum_array {
     public static void main(String[] args) {
            //Посчитать сумму элементов в каждой строке массива
