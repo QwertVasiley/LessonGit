@@ -18,7 +18,6 @@ public class OutputPositiveNumber {
         for (int i = 0; i < array.length; i++) {
             System.out.print("Задай " + (i + 1) + " значение: ");
             array[i] = scanner.nextInt();
-
         }
         System.out.println("Весь массив: " + Arrays.toString(array));
         for (int i = 0; i < array.length; i++) {
