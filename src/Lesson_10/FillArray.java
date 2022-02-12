@@ -21,8 +21,8 @@ public class FillArray {
                 break;
             }
         }
-        for (int temp: array) {
-            System.out.print(temp+"\t");
+        for (int temp : array) {
+            System.out.print(temp + "\t");
         }
     }
 }
