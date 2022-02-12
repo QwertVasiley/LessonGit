@@ -6,13 +6,21 @@ public class Revers_string_array {
         //Есть массив слов. Нужно инвертировать его порядок.
 
 
-        String[] family = {"Mother",
-                "Father",
-                "Sister",
-                "Brother"};
+        String[] family = { "Mother",
+                            "Father",
+                            "Sister",
+                            "Brother"};
 
         for (int i = family.length-1 ; i >=0; i--) {
             System.out.println(family[i]);
         }
     }
 }
+//        Второй способ
+//
+//        for (int i = 0; i < family.length; i++) {
+//            family[i] = family.length - 1 - i;
+//        }
+//
+//    }
+//}
