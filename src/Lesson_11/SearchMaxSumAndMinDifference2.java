@@ -1,6 +1,6 @@
 package Lesson_11;
 
-public class Lesson11_1_1 {
+public class SearchMaxSumAndMinDifference2 {
     public static void main(String[] args) {
         //Найти сумму максимальных чисел массива
         //найти минимальную разницу чисел (от меньшего чесла отнять большее)

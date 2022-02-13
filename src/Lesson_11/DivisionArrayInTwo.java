@@ -2,8 +2,9 @@ package Lesson_11;
 
 import java.util.Arrays;
 
-public class Lesson11 {
+public class DivisionArrayInTwo {
     public static void main(String[] args) {
+        //Разделить массив пополам на два массива
         int[] array = {15, 20, 30, 3, 70, 90, 112, 2};
         int[] array1 = new int[array.length / 2];
         int[] array2 = new int[array.length / 2];

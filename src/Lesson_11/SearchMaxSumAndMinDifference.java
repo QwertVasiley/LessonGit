@@ -1,7 +1,9 @@
 package Lesson_11;
 
-public class Lesson11_1 {
+public class SearchMaxSumAndMinDifference {
     public static void main(String[] args) {
+        //найти максимальную сумму
+        //найти минимальную разность
         int[] array = {15, 20, 30, 3, 70, 90, 112, 2};
         int max1 = array[0];
         int max2 = array[0];
