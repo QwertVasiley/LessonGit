@@ -2,7 +2,7 @@ package Lesson_10;
 
 import java.util.Arrays;
 import java.util.Scanner;
-
+//I expected to see foreach loop
 public class OutputPositiveNumber {
     public static void main(String[] args) {
         // Вывести числа которые являются положительными
@@ -23,11 +23,13 @@ public class OutputPositiveNumber {
         for (int i = 0; i < array.length; i++) {
             if (array[i] > 0) System.out.println("Число " + array[i] + " положительное");
         }
+        //you could do it in previous for loop
         System.out.println("С каким числом проверить крастность? ");
         multiple = scanner.nextInt();
         for (int i = 0; i < array.length; i++) {
             if (array[i] % multiple == 0) System.out.println(array[i] + " Кратное введенному числу");
         }
+        //you could do it in previous for loop
         for (int i = 0; i < array.length; i++) {
             if (array[i] == multiple) {
                 schet++;
