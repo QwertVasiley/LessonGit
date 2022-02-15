@@ -1,7 +1,7 @@
-package lesson6;
+package Lesson_11;
 import java.util.Random;
 import java.util.Scanner;
-public class Ugaday {
+public class RandomUgaday {
     public static void main(String[] args) {
         System.out.println("Я загадал число от 0 до 9, \nа ты с трех попыток попробуй его угадать!");
         int i = 3;
