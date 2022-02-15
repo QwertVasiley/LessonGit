@@ -15,7 +15,6 @@ public class RandomUgaday {
                 System.out.print("Попробуй еще раз ");
                 i--;
                 userNumber = scanner.nextInt();
-
         }
         if (userNumber==compNumber) System.out.println("А ты молодец! Мое число было: " + compNumber);
         if (userNumber!=compNumber) System.out.println("Ты проиграл! Мое число было: " + compNumber);
