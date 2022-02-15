@@ -1,7 +1,7 @@
 package lesson9;
 import java.util.ArrayList;
 
-public class temp {
+public class DinamicArray {
     public static void main(String[] args) {
 
 
