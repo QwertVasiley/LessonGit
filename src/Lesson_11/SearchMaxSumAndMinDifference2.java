@@ -3,7 +3,7 @@ package Lesson_11;
 public class SearchMaxSumAndMinDifference2 {
     public static void main(String[] args) {
         //Найти сумму максимальных чисел массива
-        //найти минимальную разницу чисел (от меньшего чесла отнять большее)
+        //найти минимальную разницу чисел (от меньшего числа отнять большее)
         int[] array = {15, 20, 30, 3, 70, 90, 112, 2};
         int tmp;
         for (int i = array.length - 1; i > 0; i--) {
