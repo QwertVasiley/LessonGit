@@ -3,7 +3,7 @@ package Lesson14;
 
 import java.util.Scanner;
 
-public class Classwork2 {
+public class StringLength {
     public static void main(String[] args) {
         //есть массив строк, вывести на экран все строки
         //длинна которых больше N
@@ -20,18 +20,20 @@ public class Classwork2 {
         inputLines(massLines, length);
     }
 
-    static String[] devisionString(String massLines) {
-        String[] words = massLines.split("\n");
-        for (String word : words) {
+    private static void inputLines(String[] massLines, int length) {
+        for (String line : massLines) {
+            if (line.length() > length) {
+                System.out.println(line);
+            }
         }
-        return words;
+    }
+
+    static String[] devisionString(String massLines) {
+        return massLines.split("\n");
     }
 
     public static int initLength(Scanner scan) {
         System.out.print("Enter length: ");
         return scan.nextInt();
     }
-
-    static void inputLines();
-
 }
