@@ -1,6 +1,9 @@
 package Exam2;
 
+import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
+
 
 public class Exam2 {
     public static void main(String[] args) {
@@ -18,14 +21,128 @@ public class Exam2 {
 //•	Пользователю предоставляется возможность ввести букву. Вместо этой буквы теперь будет рандомное число (String.valueOf(randomNumber))
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Choose array to work with: \n 1 - numbers \n 2 - strings ");
         int chooseArray = arraySelection(scanner);
-        System.out.println(chooseArray);
-
+        if (chooseArray == 1) {
+            int randCons = chooseRandCons(scanner);
+            if (randCons == 2) {
+                System.out.println("Enter length array: ");
+                int[] array = new int[intsize(scanner)];
+                int[] intArray = intArray(scanner, array);
+                System.out.println("Origin Array: " + Arrays.toString(intArray));
+                outputMaxMin(intArray);
+                System.out.println("Sort Array: " + Arrays.toString(intArray));
+                searchIndex(scanner, intArray); //number whose index you want to find
+            }
+            if (randCons == 1) {
+                System.out.println("Enter length array: ");
+                int[] arrayRnd = new int[intsize(scanner)];
+                intArrayRandom(arrayRnd);
+                System.out.println("Origin Array Random: " + Arrays.toString(arrayRnd));
+                outputMaxMin(arrayRnd);
+                System.out.println("Sort Array: " + Arrays.toString(arrayRnd));
+                searchIndex(scanner, arrayRnd); //number whose index you want to find
+            }
+        }
+        if (chooseArray == 2) {
+            System.out.println("Enter length array: ");
+            String[] arrayTxt = new String[intsize(scanner)];
+            intArrayTxt(scanner, arrayTxt);
+            System.out.println("Origin Array" + Arrays.toString(arrayTxt));
+            sotrArray(arrayTxt);
+            replaseLetter(arrayTxt, scanner);
+            System.out.println("Modified array: " + Arrays.toString(arrayTxt));
+        }
     }
-    static int arraySelection (Scanner scanner){ //выбор массива текстового или числового
 
+
+    static int arraySelection(Scanner scanner) { //выбор массива текстового или числового
+        System.out.println("Choose array to work with: \n 1 - numbers \n 2 - strings ");
         int number = scanner.nextInt();
         return number;
+    }
+
+    static int chooseRandCons(Scanner scanner) { //выбор способа заполнения массива
+        System.out.println("How do you want to initialize array? \n 1 - Randome \n 2 - Console");
+        int choose = scanner.nextInt();
+        return choose;
+    }
+
+    static int intsize(Scanner scanner) { //размер массива
+        int size = scanner.nextInt();
+        if (size < 0) {
+            System.out.println("Enter again: ");
+            size = intsize(scanner);
+        }
+        return size;
+    }
+
+    static int[] intArray(Scanner scanner, int[] array) { //заполнение массива с консоли
+        System.out.println("Enter values for the array: ");
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.nextInt();
+        }
+        return array;
+    }
+
+    static String[] intArrayTxt(Scanner scanner, String[] array) {
+        System.out.println("Enter words for array: ");
+        Scanner scanner1 = new Scanner(System.in);
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner1.nextLine();
+        }
+        return array;
+    }
+
+    static void outputMaxMin(int[] array) { //сортировка пузырьком вывод макс и мин числа
+        int tmp;
+        for (int i = array.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (array[j] > array[j + 1]) {
+                    tmp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = tmp;
+                }
+            }
+        }
+        System.out.println("Max " + (array[array.length - 1]));
+        System.out.println("Min " + (array[0]));
+    }
+
+    static void searchIndex(Scanner scanner, int[] array) { //поиск индеса числа в массиве
+        System.out.println("Enter number whose index you want to find ");
+        int numberScan = scanner.nextInt();
+        for (int i = 0; i < array.length; i++) {
+            if (numberScan == array[i])
+                System.out.println(i);
+        }
+    }
+
+    static int[] intArrayRandom(int[] array) { //создаем и заполняем массив рандомными числами
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            int rndNum = random.nextInt();
+            array[i] = rndNum;
+        }
+        return array;
+    }
+
+    static void sotrArray(String[] array) { //сортировка массива слов
+        Arrays.sort(array);
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + "  ");
+        }
+        System.out.println();
+    }
+
+    static String[] replaseLetter(String[] array, Scanner scanner) { //меняю введенный символ на "H"
+        System.out.println("Enter letter you want to replase: ");
+        Scanner scanner2 = new Scanner(System.in);
+        String letter = scanner2.nextLine();
+        String[] newArray = new String[array.length];
+        for (int i = 0; i < array.length; i++) {
+            newArray[i] = array[i].replace(letter, "H");
+            System.out.println(newArray[i]);
+        }
+        return newArray;
     }
 }

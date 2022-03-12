@@ -8,6 +8,7 @@ public class SearchAndOutputMaxMinDifference {
         regularizeArray(array);
         outputArray(array);
         outputMaxMinDifference(array);
+
     }
 
     static int[] regularizeArray(int[] array) {
