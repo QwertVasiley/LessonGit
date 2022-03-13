@@ -161,17 +161,15 @@ public class Exam2 {
         System.out.println();
     }
 
-   static String[] replaseLetter(String[] array, Scanner scanner) { //меняю введенный символ на рандомное число
+    static String[] replaseLetter(String[] array, Scanner scanner) { //меняю введенный символ на рандомное число
         System.out.println("Enter letter you want to replase: ");
         Scanner scanner2 = new Scanner(System.in);
         String letter = scanner2.nextLine();
-        String[] newArray = new String[array.length];
         Random random = new Random();
         int newRandom = random.nextInt();
         for (int i = 0; i < array.length; i++) {
-            newArray[i] = array[i].replace(letter, String.valueOf(newRandom));
-            System.out.println(newArray[i]);
+            array[i] = array[i].replace(letter, String.valueOf(newRandom));
         }
-        return newArray;
+        return array;
     }
 }
