@@ -18,7 +18,8 @@ public class Exam2 {
 //•	Сортировка
 //  Если был выбран массив слов, то
 //•	Отсортировать массив слов по алфавиту (лексикографически)
-//•	Пользователю предоставляется возможность ввести букву. Вместо этой буквы теперь будет рандомное число (String.valueOf(randomNumber))
+//•	Пользователю предоставляется возможность ввести букву.
+//  Вместо этой буквы теперь будет рандомное число (String.valueOf(randomNumber))
 
         Scanner scanner = new Scanner(System.in);
         int chooseArray = arraySelection(scanner);
@@ -30,8 +31,9 @@ public class Exam2 {
                 int[] intArray = intArray(scanner, array);
                 System.out.println("Origin Array: " + Arrays.toString(intArray));
                 outputMaxMin(intArray);
+                searchIndex(intArray, scanner); //number whose index you want to find
+                sortNumArray(intArray);
                 System.out.println("Sort Array: " + Arrays.toString(intArray));
-                searchIndex(scanner, intArray); //number whose index you want to find
             }
             if (randCons == 1) {
                 System.out.println("Enter length array: ");
@@ -39,8 +41,10 @@ public class Exam2 {
                 intArrayRandom(arrayRnd);
                 System.out.println("Origin Array Random: " + Arrays.toString(arrayRnd));
                 outputMaxMin(arrayRnd);
+                searchIndex(arrayRnd, scanner); //number whose index you want to find
+                sortNumArray(arrayRnd);
                 System.out.println("Sort Array: " + Arrays.toString(arrayRnd));
-                searchIndex(scanner, arrayRnd); //number whose index you want to find
+
             }
         }
         if (chooseArray == 2) {
@@ -94,6 +98,38 @@ public class Exam2 {
     }
 
     static void outputMaxMin(int[] array) { //сортировка пузырьком вывод макс и мин числа
+        int[] arrayTmp = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            arrayTmp[i] = array[i];
+        }
+        int tmp;
+        for (int i = array.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (arrayTmp[j] > arrayTmp[j + 1]) {
+                    tmp = arrayTmp[j];
+                    arrayTmp[j] = arrayTmp[j + 1];
+                    arrayTmp[j + 1] = tmp;
+                }
+            }
+        }
+        System.out.println("Max " + (arrayTmp[array.length - 1]));
+        System.out.println("Min " + (arrayTmp[0]));
+    }
+
+    static void searchIndex(int[] array, Scanner scanner) {
+        System.out.println("Enter number whose index you want to find:");
+        int number = scanner.nextInt();
+        for (int i = 0; i < array.length; ++i) {
+            if (array[i] == number) {
+                System.out.println("Index: " + i);
+                return;
+            }
+            if (array.length - 1 == i)
+                System.out.println("-1");
+        }
+    }
+
+    static int[] sortNumArray(int[] array) {
         int tmp;
         for (int i = array.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
@@ -104,17 +140,7 @@ public class Exam2 {
                 }
             }
         }
-        System.out.println("Max " + (array[array.length - 1]));
-        System.out.println("Min " + (array[0]));
-    }
-
-    static void searchIndex(Scanner scanner, int[] array) { //поиск индеса числа в массиве
-        System.out.println("Enter number whose index you want to find ");
-        int numberScan = scanner.nextInt();
-        for (int i = 0; i < array.length; i++) {
-            if (numberScan == array[i])
-                System.out.println(i);
-        }
+        return array;
     }
 
     static int[] intArrayRandom(int[] array) { //создаем и заполняем массив рандомными числами
@@ -127,6 +153,7 @@ public class Exam2 {
     }
 
     static void sotrArray(String[] array) { //сортировка массива слов
+        System.out.print("Sort array: ");
         Arrays.sort(array);
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + "  ");
@@ -134,13 +161,15 @@ public class Exam2 {
         System.out.println();
     }
 
-    static String[] replaseLetter(String[] array, Scanner scanner) { //меняю введенный символ на "H"
+   static String[] replaseLetter(String[] array, Scanner scanner) { //меняю введенный символ на рандомное число
         System.out.println("Enter letter you want to replase: ");
         Scanner scanner2 = new Scanner(System.in);
         String letter = scanner2.nextLine();
         String[] newArray = new String[array.length];
+        Random random = new Random();
+        int newRandom = random.nextInt();
         for (int i = 0; i < array.length; i++) {
-            newArray[i] = array[i].replace(letter, "H");
+            newArray[i] = array[i].replace(letter, String.valueOf(newRandom));
             System.out.println(newArray[i]);
         }
         return newArray;
