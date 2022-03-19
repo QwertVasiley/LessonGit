@@ -6,5 +6,8 @@ public class Main {
         person.show();
         Person dimon = new Person(31, "Dimon");
         dimon.show();
+        person.changeTxt("The wether is Good");
+        person.printText();
+        dimon.printText();
     }
 }
