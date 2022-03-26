@@ -1,6 +1,6 @@
 package Task1;
 
-public class Mode implements Computer {
+public class Mode implements Computer{
     public int number;
 
     public Mode(int number) {
