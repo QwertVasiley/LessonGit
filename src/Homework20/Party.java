@@ -5,6 +5,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Party {
+    // Вход на вечеринку только по списку.
+    // Есть список имен (коллекция).
+    // Пользователь вводит с консоли свое имя,
+    // а программа проверяет его наличие в списке,
+    // после чего говорит может он пройти или нет
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
         list.add("Lizaveta");
