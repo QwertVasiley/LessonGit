@@ -1,13 +1,14 @@
 package Temp;
 
 public class Cat {
-   private int age;
-    private  String name;
+    private int age;
+    private String name;
 
-    public int resultAge(){
+    public int resultAge() {
         return age;
     }
-    public String resultName(){
+
+    public String resultName() {
         return name;
     }
 
