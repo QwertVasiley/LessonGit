@@ -8,11 +8,15 @@ public class Main {
     // Пометисть это все в мапу
     public static void main(String[] args) {
 
-        Map<String, Integer> employee = new HashMap<>();
-        employee.put("Petrov", 15);
-        employee.put("Sidorov", 8);
-        employee.put("Veselkin", 43);
+        Employee petrov = new Employee("Petrov", 15);
+        Employee sidorov = new Employee("Sidorov", 8);
+        Employee veselkin = new Employee("Veselkin", 43);
 
-        System.out.println(employee);
+        Map<String, Integer> employ = new HashMap<>();
+        employ.put(petrov.getLastName(), petrov.getDepartment());
+        employ.put(sidorov.getLastName(), sidorov.getDepartment());
+        employ.put(veselkin.getLastName(), veselkin.getDepartment());
+
+        System.out.println(employ);
     }
 }
